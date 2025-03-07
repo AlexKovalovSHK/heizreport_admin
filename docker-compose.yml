@@ -1,0 +1,7 @@
+services:
+  backend:
+    image: heizreport_admin:latest
+    container_name: heizreport_admin
+    ports:
+      - "3002:3002"
+    command: "nginx -g 'daemon off;'"
