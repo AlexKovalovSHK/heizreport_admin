@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import type {} from '@mui/x-date-pickers/themeAugmentation';
 import type {} from '@mui/x-charts/themeAugmentation';
 import type {} from '@mui/x-data-grid-pro/themeAugmentation';
@@ -18,6 +18,9 @@ import SideMenu from '../components/SideMenu';
 import AppNavbar from '../components/AppNavbar';
 import Header from '../components/ Header';
 import MainGrid from '../components/MainGrid';
+import { useAppSelector } from '../app/hooks';
+import { selectAdmin, selectAdminId, selectAdminStatus } from '../features/user_admin/adminSlice';
+import { useNavigate } from 'react-router-dom';
 
 const xThemeComponents = {
   ...chartsCustomizations,
@@ -27,6 +30,7 @@ const xThemeComponents = {
 };
 
 export default function Dashboard(props: { disableCustomTheme?: boolean }) {
+
   return (
     <AppTheme {...props} themeComponents={xThemeComponents}>
       <CssBaseline enableColorScheme />

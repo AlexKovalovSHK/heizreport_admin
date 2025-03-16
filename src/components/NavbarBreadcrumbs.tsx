@@ -3,6 +3,8 @@ import { styled } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import Breadcrumbs, { breadcrumbsClasses } from '@mui/material/Breadcrumbs';
 import NavigateNextRoundedIcon from '@mui/icons-material/NavigateNextRounded';
+import { useAppSelector } from '../app/hooks';
+import { selectPage } from '../features/navigation/navigationSlice';
 
 const StyledBreadcrumbs = styled(Breadcrumbs)(({ theme }) => ({
   margin: theme.spacing(1, 0),
@@ -16,6 +18,7 @@ const StyledBreadcrumbs = styled(Breadcrumbs)(({ theme }) => ({
 }));
 
 export default function NavbarBreadcrumbs() {
+  const page = useAppSelector(selectPage)
   return (
     <StyledBreadcrumbs
       aria-label="breadcrumb"
@@ -23,7 +26,7 @@ export default function NavbarBreadcrumbs() {
     >
       <Typography variant="body1">Dashboard</Typography>
       <Typography variant="body1" sx={{ color: 'text.primary', fontWeight: 600 }}>
-        Home
+        {page}
       </Typography>
     </StyledBreadcrumbs>
   );
