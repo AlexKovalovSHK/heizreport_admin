@@ -23,8 +23,8 @@ import Kaufe from "./kaufe/Kaufe"
 import Meetings from "./meetings/Meetings"
 import Mail from "./mails/Mail"
 import Funktionen from "./functions/Funktionen"
-import Logs from "./logs/Logs"
 import Einstelungen from "./einstelungen/Einstelungen"
+import LogElement from "./log_element/LogElement"
 
 const pageComponents: PageComponents = {
   Home: HomeTab,
@@ -36,7 +36,7 @@ const pageComponents: PageComponents = {
   Meetings: Meetings, 
   Mails: Mail, 
   Funktionen: Funktionen, 
-  Log: Logs, 
+  Log: LogElement, 
   Einstelungen: Einstelungen, 
 };
 
