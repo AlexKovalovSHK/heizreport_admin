@@ -1,8 +1,6 @@
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.css"
 import "./App.css"
-import Dashboard from "./dashboard/Dashboard"
-import logo from "./logo.svg"
 import Login from "./components/auth/Login"
 import { useAppDispatch, useAppSelector } from "./app/hooks"
 import { useEffect } from "react"
@@ -11,16 +9,13 @@ import {
   selectAdmin,
   selectAdminStatus,
 } from "./features/user_admin/adminSlice"
-import { ProtectedRoute } from "./utils/ProtectedRoute"
-import { Administrator } from "./features/user_admin/type"
-import RequireAuth from "./components/auth/RequireAuth"
 import DashboardSHK from "./dashboard/DashboardSHK"
 
-//export const apiUrl = "http://localhost:5001"
+export const apiUrl = "http://localhost:5001"
 //export const apiUrlFoo = 'http://217.154.5.134:5001';
 //export const apiUrl = "https://hr.shk.solutions";
 //export const apiUrl = import.meta.env.VITE_API_URL
-export const apiUrl = 'https://api.heizreport.dev'
+//export const apiUrl = 'https://api.heizreport.dev'
 
 const App = () => {
   const dispatch = useAppDispatch();
@@ -48,7 +43,7 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
-      <Route path="/d" element={<Dashboard />} />
+      <Route path="/dashboard" element={<DashboardSHK />} />
       <Route path="/dashboard" element={admin ? <DashboardSHK /> : <Login />} />
     </Routes>
   );

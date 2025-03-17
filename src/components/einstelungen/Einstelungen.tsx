@@ -1,8 +1,11 @@
 import React from 'react'
+import EinstelungenTab from './EinstelungenTab'
 
 const Einstelungen = () => {
   return (
-    <div>Einstelungen</div>
+    <div>
+      <EinstelungenTab/>
+    </div>
   )
 }
 
