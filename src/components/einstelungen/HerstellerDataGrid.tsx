@@ -36,7 +36,6 @@ const my_columns: GridColDef[] = [
 ]
 
 const HerstellerDataGrid = () => {
-  const navigate = useNavigate()
   const [rows, setRows] = useState<Hersteller[]>([])
   const [loading, setLoading] = useState<boolean>(true)
   const [selectedHersteller, setSelectedHersteller] = useState<Hersteller | null>(null);

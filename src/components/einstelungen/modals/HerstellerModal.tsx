@@ -4,6 +4,9 @@ import Typography from "@mui/material/Typography"
 import Modal from "@mui/material/Modal"
 import { Hersteller } from "../../../features/hersteller_feature/type"
 import styles from "../Einstelungen.module.css"
+import HerstellerEditModal from "./HerstellerEditModal"
+import { useAppSelector } from "../../../app/hooks"
+import { selectProject } from "../../../features/projects/projectSlice"
 
 interface HerstellerModalProps {
   open: boolean
@@ -16,6 +19,7 @@ const HerstellerModal: React.FC<HerstellerModalProps> = ({
   onClose,
   hersteller,
 }) => {
+
   return (
     <Modal
       open={open}
@@ -29,7 +33,7 @@ const HerstellerModal: React.FC<HerstellerModalProps> = ({
             <Typography id="modal-description" sx={{ mt: 2 }}>
               <strong>ID:</strong> {hersteller.herstellerId} <br />
               <hr />
-              <strong>Kurz:</strong> {hersteller.herstellerKurz} <br />
+              <strong>Hersteller:</strong> {hersteller.herstellerKurz} <br />
               <hr />
               <strong>Typ:</strong> {hersteller.herstellerTyp} <br />
               <hr />
@@ -40,10 +44,11 @@ const HerstellerModal: React.FC<HerstellerModalProps> = ({
               <strong>Notiz intern:</strong> {hersteller.herstellerNotizIntern}{" "}
               <br />
               <hr />
-              <strong>Notiz Extern(Open):</strong> {hersteller.herstellerKurz}{" "}
+              <strong>Notiz Extern(Open):</strong> {hersteller.herstellerNotizExtern}{" "}
               <br />
               <hr />
             </Typography>
+            <HerstellerEditModal/>
           </div>
         </div>
       </Box>
