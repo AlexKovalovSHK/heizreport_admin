@@ -1,7 +1,11 @@
 import { Button } from "@mui/material"
 import React from "react"
+import { useAppSelector } from "../../../../app/hooks"
+import { selectAntrag } from "../../../../features/foerderung/foerderungSlice"
 
 const ProjectStep4 = () => {
+  const antrag = useAppSelector(selectAntrag)
+
   return (
     <>
       <div className="col-lg-12 mt-3">
@@ -24,19 +28,19 @@ const ProjectStep4 = () => {
         <div className=" mb-3 d-flex justify-content-between w-100">
           <div className="w-25 border border-secondary rounded p-3">
             <p className="mb-0">
-              Baujahr: <span>1995</span>
+              Baujahr: <span>{antrag.antragObjektBaujahr}</span>
             </p>
           </div>
           <div className="w-50 border border-secondary rounded p-3">
             <p className="mb-0">
-              Wohnfläche (m²): <span>220</span>
+              Wohnfläche (m²): <span>{antrag.antragObjektFlaeche}</span>
             </p>
           </div>
         </div>
 
         <div className="w-100 mb-3 border border-secondary rounded p-3">
           <p className="mb-0">
-            Gebäudeart: <span>Einfamilienhaus (1 WE)</span>
+            Gebäudeart: <span>{antrag.antragObjektBetroffeneWE}</span>
           </p>
         </div>
 

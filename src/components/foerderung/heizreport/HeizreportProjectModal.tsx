@@ -50,7 +50,7 @@ const HeizreportProjectModal: React.FC<ProjectModalProps> = ({
             <div className="d-flex flex-row align-items-center border border-secondary rounded p-3 mb-3">
               <SupportAgentIcon sx={{ fontSize: "56px", color: "#0074D9" }} />
               <Typography variant="h6" gutterBottom>
-                {antrag.adminUserName}
+                {antrag?.adminUser?.adminUserName}
               </Typography>
               <RedoIcon sx={{ color: "#0074D9" }} />
             </div>
@@ -59,19 +59,19 @@ const HeizreportProjectModal: React.FC<ProjectModalProps> = ({
                 <div className=" col-lg-3">
                   <div className="border border-secondary rounded p-2">
                     <Button variant="contained" className="w-100 mb-2">
-                      Contained
+                      Übersicht
                     </Button>
                     <Button variant="contained" className="w-100 mb-2">
-                      Contained
+                      Alle E-Mails
                     </Button>
                     <Button variant="contained" className="w-100 mb-2">
-                      Contained
+                      Alle Dokumente
                     </Button>
                     <Button variant="contained" className="w-100 mb-2">
-                      Contained
+                      Rückfrage
                     </Button>
                     <Button variant="contained" className="w-100 mb-2">
-                      Contained
+                      Antrag bearbeiten
                     </Button>
                   </div>
                   <div className="mt-3">
@@ -112,14 +112,8 @@ const HeizreportProjectModal: React.FC<ProjectModalProps> = ({
                 <div className="col-lg-9">
                   <HorizontalNonLinearStepper />
                 </div>
-
-                
               </div>
             </div>
-            <Typography id="modal-description" sx={{ mt: 2 }}>
-              <strong>ID:</strong> {project.projektId} <br />
-              <strong>Hersteller:</strong> {project.projektOrtAnschrift} <br />
-            </Typography>
           </div>
         </div>
       </Box>

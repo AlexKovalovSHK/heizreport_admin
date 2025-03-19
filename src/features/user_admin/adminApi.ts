@@ -5,6 +5,7 @@ import { apiUrl } from "../../App"
 
 export async function loginAdministrator(login: LoginAdmin): Promise<Administrator> {
     const pwd = await hashPassword(login.adminUserPass)
+    //console.log(pwd);
   try {
     const res = await axios.post(
       `${apiUrl}/api/v3/auth/admins/login`,

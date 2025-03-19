@@ -11,9 +11,9 @@ import {
 } from "./features/user_admin/adminSlice"
 import DashboardSHK from "./dashboard/DashboardSHK"
 
-//export const apiUrl = "http://localhost:5001"
+export const apiUrl = "http://localhost:5001"
 //export const apiUrlFoo = 'http://217.154.5.134:5001';
-export const apiUrl = "https://hr.shk.solutions";
+//export const apiUrl = "https://hr.shk.solutions";
 //export const apiUrl = import.meta.env.VITE_API_URL
 //export const apiUrl = 'https://api.heizreport.dev'
 

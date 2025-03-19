@@ -1,10 +1,10 @@
 import { createAppSlice } from "../../app/createAppSlice";
 import { fechAntragById, fechAntrags } from "./foerderungApi";
-import { Antrag, AntragState } from "./type";
+import { Antrag, AntragFull, AntragState } from "./type";
 
 
 const initialState: AntragState = {
-    antrag: {} as Antrag,
+    antrag: {} as AntragFull,
     antragsList: [] as Antrag[],
     errorMessage: "",
     status: "idle",
