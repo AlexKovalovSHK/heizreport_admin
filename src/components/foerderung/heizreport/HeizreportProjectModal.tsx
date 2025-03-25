@@ -1,21 +1,16 @@
 import React from "react"
-import { ProjectRespDto } from "../../../features/projects/type"
+import { AntragRespDto } from "../../../features/projects/type"
 import { Box, Button, Modal, Typography } from "@mui/material"
 import styles from "../foerderung.module.css"
 import { useAppSelector } from "../../../app/hooks"
-import { selectProject } from "../../../features/projects/projectSlice"
+import { selectProject } from "../../../features/projects/antragSlice"
 import SupportAgentIcon from "@mui/icons-material/SupportAgent"
 import RedoIcon from "@mui/icons-material/Redo"
 import { selectAntrag } from "../../../features/foerderung/foerderungSlice"
 import CheckCircleIcon from "@mui/icons-material/CheckCircle"
 import DoneAllIcon from "@mui/icons-material/DoneAll"
 import HorizontalNonLinearStepper from "./HorizontalNonLinearStepper"
-
-interface ProjectModalProps {
-  open: boolean
-  onClose: () => void
-  project: ProjectRespDto
-}
+import { ProjectModalProps } from "../../../features/projects/utils/type.modal"
 
 const HeizreportProjectModal: React.FC<ProjectModalProps> = ({
   open,

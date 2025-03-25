@@ -1,24 +1,24 @@
 import { createAppSlice } from "../../app/createAppSlice";
-import { fechProjectById, fetchProjectsByUserId } from "./projectsApi";
-import { ProjectRespDto, ProjectState } from "./type";
+import {  fechAntragById, fetchProjectsByUserId } from "./projectsApi";
+import { AntragRespDto, AntragState, ProjectRespDto } from "./type";
 
 
-const initialState: ProjectState = {
-    project: {} as ProjectRespDto,
-    projectsList: [] as ProjectRespDto[],
+const initialState: AntragState = {
+    project: {} as AntragRespDto,
+    projectsList: [] as AntragRespDto[],
     projektId: null,
     errorMessage: "",
     status: "idle",
     //paginationProjects: {} as ProjectsPage
 }
 
-export const projectSlice = createAppSlice({
-    name: "project",
+export const antragSlice = createAppSlice({
+    name: "antrag",
     initialState,
     reducers: create => ({
         getProjIdAsync: create.asyncThunk(
             async (projId: string) => {
-                const response = await fechProjectById(projId)
+                const response = await fechAntragById(projId)
                 return response
             },
             {
@@ -65,5 +65,5 @@ export const projectSlice = createAppSlice({
     },
 })
 
-export const { getProjIdAsync,  getProjectsBuUserID,  } = projectSlice.actions
-export const { selectProject, selectError, selectProjectsList, selectProjectId, selectProjectStatus,} = projectSlice.selectors
+export const { getProjIdAsync,  getProjectsBuUserID,  } = antragSlice.actions
+export const { selectProject, selectError, selectProjectsList, selectProjectId, selectProjectStatus,} = antragSlice.selectors

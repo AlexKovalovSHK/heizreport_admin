@@ -6,7 +6,7 @@ import { Hersteller } from "../../../features/hersteller_feature/type"
 import styles from "../Einstelungen.module.css"
 import HerstellerEditModal from "./HerstellerEditModal"
 import { useAppSelector } from "../../../app/hooks"
-import { selectProject } from "../../../features/projects/projectSlice"
+import { selectProject } from "../../../features/projects/antragSlice"
 
 interface HerstellerModalProps {
   open: boolean

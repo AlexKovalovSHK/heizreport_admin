@@ -5,10 +5,9 @@ import { selectAdminId } from "../../../features/user_admin/adminSlice"
 import { fechAntrags } from "../../../features/foerderung/foerderungApi"
 import { DataGrid, GridColDef, GridRowParams } from "@mui/x-data-grid"
 import { Antrag } from "../../../features/foerderung/type"
-import { fechProjectById } from "../../../features/projects/projectsApi"
 import { ProjectRespDto } from "../../../features/projects/type"
 import HeizreportProjectModal from "./HeizreportProjectModal"
-import { getProjIdAsync } from "../../../features/projects/projectSlice"
+import { getProjIdAsync } from "../../../features/projects/antragSlice"
 import {
   getAntragIdAsync,
   getAntragssBuAdminId,
@@ -103,8 +102,8 @@ const HeizreportTable = () => {
     <>
       <DataGrid
         rows={rows}
-        columns={my_columns} // Тут была ошибка, исправил
-        getRowId={row => row.antragId} // Используем herstellerId как id
+        columns={my_columns}
+        getRowId={row => row.antragId} 
         getRowClassName={params =>
           params.indexRelativeToCurrentPage % 2 === 0 ? "even" : "odd"
         }
@@ -114,7 +113,7 @@ const HeizreportTable = () => {
         pageSizeOptions={[10, 20, 50]}
         disableColumnResize
         density="compact"
-        onRowClick={handleRowClick} // Добавили обработчик клика по строке
+        onRowClick={handleRowClick}
         slotProps={{
           filterPanel: {
             filterFormProps: {

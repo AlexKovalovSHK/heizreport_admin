@@ -1,6 +1,6 @@
 import React from "react"
 import { useAppSelector } from "../../../../app/hooks"
-import { selectProject } from "../../../../features/projects/projectSlice"
+import { selectProject } from "../../../../features/projects/antragSlice"
 import { selectUser } from "../../../../features/users/userSlice"
 
 const ProjectStep2 = () => {
