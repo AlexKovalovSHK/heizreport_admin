@@ -3,6 +3,8 @@ import { a11yProps, CustomTabPanel } from '../../utils/TabsUtils';
 import { useEffect, useState } from 'react';
 import { useAppSelector } from '../../app/hooks';
 import { selectProject } from '../../features/projects/projectSlice';
+import ProjectLogs from './ProjectLogs';
+import ProjectMails from './ProjectMails';
 
 const ProjectSmallTabs = () => {
     const [value, setValue] = useState(0);
@@ -36,10 +38,10 @@ const ProjectSmallTabs = () => {
           </div>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
-          Item Two
+          <ProjectMails/>
         </CustomTabPanel>
         <CustomTabPanel value={value} index={2}>
-          Item Three
+          <ProjectLogs/>
         </CustomTabPanel>
       </Box>
     );
