@@ -8,7 +8,6 @@ import Stack from "@mui/material/Stack"
 import Typography from "@mui/material/Typography"
 import CardAlert from "./CardAlert"
 import OptionsMenu from "./OptionsMenu"
-import SelectContent from "./ SelectContent"
 import MenuContent from "./ MenuContent"
 import { useAppSelector } from "../app/hooks"
 import { selectAdmin } from "../features/user_admin/adminSlice"
@@ -45,7 +44,6 @@ export default function SideMenu() {
           p: 1.5,
         }}
       >
-        <SelectContent />
       </Box>
       <Divider />
       <Box
