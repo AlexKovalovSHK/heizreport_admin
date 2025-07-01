@@ -36,6 +36,7 @@ const mainListItems = [
   { text: "Funktionen", icon: <TagIcon /> },
   { text: "Log", icon: <ListIcon /> },
   { text: "Einstelungen", icon: <SettingsRoundedIcon /> },
+  { text: "KanbanboardLog", icon: <ListIcon /> },
 ]
 
 export default function MenuContent() {

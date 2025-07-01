@@ -25,6 +25,7 @@ import Mail from "./mails/Mail"
 import Funktionen from "./functions/Funktionen"
 import Einstelungen from "./einstelungen/Einstelungen"
 import LogElement from "./log_element/LogElement"
+import KanbanboardLog from "./kanbanboardLog/KanbanboardLog"
 
 const pageComponents: PageComponents = {
   Home: HomeTab,
@@ -38,6 +39,7 @@ const pageComponents: PageComponents = {
   Funktionen: Funktionen, 
   Log: LogElement, 
   Einstelungen: Einstelungen, 
+  KanbanboardLog: KanbanboardLog,
 };
 
 export default function MainGrid() {

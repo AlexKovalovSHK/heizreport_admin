@@ -18,6 +18,7 @@ type Page =
   | "Funktionen"
   | "Log"
   | "Einstelungen"
+  | "KanbanboardLog"
 
 /*const mainListItems = [
   { text: "Home", icon: <HomeRoundedIcon /> },
