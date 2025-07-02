@@ -23,19 +23,16 @@ const App = () => {
   const status = useAppSelector(selectAdminStatus);
   const navigate = useNavigate();
 
-  // При старте загружаем данные
   useEffect(() => {
     dispatch(authAdmin());
   }, [dispatch]);
 
-  // Перенаправляем на /dashboard после успешной загрузки
   useEffect(() => {
     if (status === 'success' && admin) {
       navigate('/dashboard');
     }
   }, [status, admin, navigate]);
 
-  // Показываем лоадер во время загрузки
   if (status === 'loading') {
     return <div>Loading...</div>;
   }

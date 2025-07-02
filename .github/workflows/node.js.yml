@@ -49,7 +49,7 @@ jobs:
       # Шаг 7: Сборка Docker-образа
       - name: Build Docker image
         run: |
-          docker build -t $DOCKER_IMAGE .
+          docker build --no-cache -t $DOCKER_IMAGE .
           docker images
       # Шаг 8: Сохранение Docker-образа в tar-файл
       - name: Save Docker image
